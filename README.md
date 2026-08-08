@@ -2,11 +2,13 @@
 
 Proyecto desarrollado para el curso de **Aseguramiento de la Calidad del Software**, utilizando Playwright con TypeScript para la automatización de pruebas sobre la aplicación DemoBlaze.
 
-## Datos del estudiante
+---
+
+# Datos del estudiante
 
 **Nombre:** Cesar Ulises González Cardona
 
-**Carné:** [COLOCA AQUÍ TU CARNÉ]
+**Carné:** 1790-22-6044
 
 **Curso:** Aseguramiento de la Calidad del Software
 
@@ -35,11 +37,13 @@ Se implementaron las siguientes pruebas:
 2. Verificar que el menú de categorías sea visible.
 3. Verificar que la barra de navegación contenga los enlaces correspondientes.
 
-Archivo:
+## Archivo
 
-`tests/clase01.spec.ts`
+```text
+tests/clase01.spec.ts
+```
 
-Para ejecutar únicamente los tests de la Clase 01:
+## Ejecutar los tests de la Clase 01
 
 ```bash
 npx playwright test tests/clase01.spec.ts
@@ -60,11 +64,13 @@ Se realizaron pruebas relacionadas con:
 5. Captura del Footer.
 6. Verificación del tiempo de carga.
 
-Archivo:
+## Archivo
 
-`tests/clase02.spec.ts`
+```text
+tests/clase02.spec.ts
+```
 
-Para ejecutar únicamente la Clase 02:
+## Ejecutar los tests de la Clase 02
 
 ```bash
 npx playwright test tests/clase02.spec.ts
@@ -74,7 +80,9 @@ npx playwright test tests/clase02.spec.ts
 
 Las capturas generadas durante las pruebas se encuentran en:
 
-`evidencias/clase02/`
+```text
+evidencias/clase02/
+```
 
 ---
 
@@ -115,7 +123,9 @@ Se utiliza `filter()` para encontrar específicamente el producto **Samsung gala
 
 Durante la ejecución se obtuvo:
 
-`Precio de Samsung galaxy s6: $360`
+```text
+Precio de Samsung galaxy s6: $360
+```
 
 ### Reto 3 - Locator por atributo parcial
 
@@ -125,9 +135,11 @@ Se utiliza un selector basado en el atributo `onclick` para verificar las tres c
 - Laptops
 - Monitors
 
-Archivo correspondiente:
+## Archivo
 
-`tests/clase03.spec.ts`
+```text
+tests/clase03.spec.ts
+```
 
 ---
 
@@ -137,14 +149,6 @@ Para ejecutar únicamente los 9 tests correspondientes a la Clase 03:
 
 ```bash
 npx playwright test tests/clase03.spec.ts
-```
-
-Resultado esperado:
-
-```text
-Running 9 tests using 1 worker
-
-9 passed
 ```
 
 Para ejecutar los tests mostrando el navegador:
@@ -158,18 +162,6 @@ Para utilizar la interfaz gráfica de Playwright:
 ```bash
 npx playwright test tests/clase03.spec.ts --ui
 ```
-
----
-
-# Reporte HTML
-
-Después de ejecutar las pruebas se puede visualizar el reporte generado por Playwright mediante:
-
-```bash
-npx playwright show-report
-```
-
-El reporte permite visualizar los tests ejecutados, su duración y el resultado de cada prueba.
 
 ---
 
@@ -189,7 +181,9 @@ Durante la ejecución de los 9 tests de la Clase 03 se generan automáticamente 
 
 Las imágenes se encuentran almacenadas en:
 
-`evidencias/clase03/`
+```text
+evidencias/clase03/
+```
 
 ---
 
@@ -201,9 +195,166 @@ Como parte de la Clase 03 se documentó el caso de prueba:
 
 El documento se encuentra en:
 
-`casos-de-prueba/TC-001.md`
+```text
+casos-de-prueba/TC-001.md
+```
 
 El caso verifica que un usuario pueda seleccionar un producto de DemoBlaze, agregarlo al carrito y comprobar posteriormente que aparece correctamente dentro del carrito de compras.
+
+---
+
+# Clase 04 - Actions en Playwright
+
+En la Clase 04 se trabajó con diferentes **acciones de usuario en Playwright**, utilizando métodos como `fill()`, `click()` y `clear()` para interactuar con formularios, botones, ventanas modales y campos de la aplicación DemoBlaze.
+
+Para esta clase se integraron los tests realizados anteriormente junto con los **3 tests reto solicitados en la Tarea 04**, obteniendo un total de **7 pruebas automatizadas**.
+
+## Tests de la Clase 04
+
+### Test 1 - Registrar un nuevo usuario
+
+Se realiza el proceso de registro de un nuevo usuario en DemoBlaze utilizando las acciones de Playwright necesarias para completar el formulario.
+
+### Test 2 - Iniciar sesión
+
+Se utiliza el usuario registrado para realizar el proceso de inicio de sesión y verificar que el acceso se realice correctamente.
+
+### Test 3 - Agregar producto al carrito
+
+Se realiza el inicio de sesión, se selecciona un producto y posteriormente se agrega al carrito para comprobar que el producto haya sido agregado correctamente.
+
+### Test 4 - Login con credenciales incorrectas
+
+Se intenta iniciar sesión utilizando credenciales incorrectas para verificar el comportamiento de la aplicación ante un intento de autenticación no válido.
+
+---
+
+# Tests reto de la Clase 04
+
+## Reto 1 - Completar Place Order utilizando fill()
+
+Se utiliza el método `fill()` de Playwright para completar los campos correspondientes al formulario de **Place Order**.
+
+Este ejercicio permite practicar la interacción automatizada con diferentes campos de un formulario.
+
+## Reto 2 - Cerrar el modal utilizando Close
+
+Se interactúa con una ventana modal de DemoBlaze y se utiliza el botón **Close** para cerrarla.
+
+Este ejercicio permite practicar la interacción con elementos que aparecen dentro de ventanas modales.
+
+## Reto 3 - Llenar y limpiar un campo utilizando clear()
+
+Se llena un campo utilizando Playwright y posteriormente se utiliza `clear()` para eliminar su contenido.
+
+Este ejercicio permite comprobar el comportamiento de un campo antes y después de limpiar su información.
+
+---
+
+# Archivo de la Clase 04
+
+Los tests de la Clase 04 se encuentran en:
+
+```text
+tests/clase04.spec.ts
+```
+
+La Clase 04 contiene un total de **7 tests automatizados**:
+
+1. Registrar un nuevo usuario.
+2. Iniciar sesión con el usuario registrado.
+3. Iniciar sesión y agregar un producto al carrito.
+4. Intentar iniciar sesión con credenciales incorrectas.
+5. Completar Place Order utilizando `fill()`.
+6. Cerrar un modal utilizando el botón `Close`.
+7. Llenar y limpiar un campo utilizando `clear()`.
+
+---
+
+# Ejecutar los tests de la Clase 04
+
+Para ejecutar únicamente los tests correspondientes a la Clase 04:
+
+```bash
+npx playwright test tests/clase04.spec.ts
+```
+
+Para ejecutar los tests mostrando el navegador:
+
+```bash
+npx playwright test tests/clase04.spec.ts --headed
+```
+
+Para utilizar la interfaz gráfica de Playwright:
+
+```bash
+npx playwright test tests/clase04.spec.ts --ui
+```
+
+---
+
+# Reflexión Tarea 04
+
+Como parte de la Tarea 04 se debe presentar una reflexión sobre los principios utilizados durante la automatización de pruebas.
+
+La reflexión se encuentra en:
+
+```text
+tareas/tarea-04.md
+```
+
+La pregunta principal de la reflexión es:
+
+**¿Cuál principio es más importante y por qué?**
+
+En la reflexión se analiza la importancia de la confiabilidad de las pruebas automatizadas, la correcta interacción con los elementos de la aplicación y la importancia de realizar validaciones después de ejecutar las acciones.
+
+---
+
+# Reporte HTML de Playwright
+
+Después de ejecutar las pruebas se puede visualizar el reporte generado por Playwright mediante:
+
+```bash
+npx playwright show-report
+```
+
+El reporte permite visualizar:
+
+- Tests ejecutados.
+- Tests aprobados.
+- Tests fallidos.
+- Duración de las pruebas.
+- Detalles de cada prueba.
+- Evidencias generadas durante la ejecución.
+
+---
+
+# Ejecutar todas las pruebas
+
+Para ejecutar todos los tests desarrollados en el proyecto:
+
+```bash
+npx playwright test
+```
+
+Para ejecutar todos los tests mostrando el navegador:
+
+```bash
+npx playwright test --headed
+```
+
+Para ejecutar las pruebas utilizando la interfaz gráfica:
+
+```bash
+npx playwright test --ui
+```
+
+Para visualizar el reporte:
+
+```bash
+npx playwright show-report
+```
 
 ---
 
@@ -234,10 +385,14 @@ pw-2026/
 │       ├── 08-reto-filter-producto.png
 │       └── 09-reto-categorias.png
 │
+├── tareas/
+│   └── tarea-04.md
+│
 ├── tests/
 │   ├── clase01.spec.ts
 │   ├── clase02.spec.ts
-│   └── clase03.spec.ts
+│   ├── clase03.spec.ts
+│   └── clase04.spec.ts
 │
 ├── README.md
 ├── package.json
@@ -248,15 +403,73 @@ pw-2026/
 
 ---
 
-# Ejecutar todas las pruebas
+# Instalación del proyecto
 
-Para ejecutar todos los tests desarrollados hasta el momento:
+Para instalar las dependencias del proyecto se debe ejecutar:
+
+```bash
+npm install
+```
+
+Si es la primera vez que se utiliza Playwright en el equipo, también se pueden instalar los navegadores mediante:
+
+```bash
+npx playwright install
+```
+
+---
+
+# Comandos principales
+
+## Instalar dependencias
+
+```bash
+npm install
+```
+
+## Ejecutar todos los tests
 
 ```bash
 npx playwright test
 ```
 
-Para consultar posteriormente el reporte:
+## Ejecutar Clase 01
+
+```bash
+npx playwright test tests/clase01.spec.ts
+```
+
+## Ejecutar Clase 02
+
+```bash
+npx playwright test tests/clase02.spec.ts
+```
+
+## Ejecutar Clase 03
+
+```bash
+npx playwright test tests/clase03.spec.ts
+```
+
+## Ejecutar Clase 04
+
+```bash
+npx playwright test tests/clase04.spec.ts
+```
+
+## Ejecutar mostrando el navegador
+
+```bash
+npx playwright test --headed
+```
+
+## Ejecutar utilizando la interfaz gráfica
+
+```bash
+npx playwright test --ui
+```
+
+## Mostrar el reporte HTML
 
 ```bash
 npx playwright show-report
@@ -264,10 +477,52 @@ npx playwright show-report
 
 ---
 
+# Entrega Tarea 04
+
+La entrega de la Tarea 04 contiene los elementos solicitados:
+
+- Tests anteriores de Playwright.
+- Tests de la Clase 04.
+- 3 tests reto de la Tarea 04.
+- Reflexión de la Tarea 04.
+- README con instrucciones de ejecución.
+- Evidencias de las pruebas realizadas.
+
+Los archivos principales de la Tarea 04 son:
+
+```text
+tests/clase04.spec.ts
+tareas/tarea-04.md
+README.md
+```
+
+El enlace al repositorio de GitHub será entregado en Canvas de acuerdo con las instrucciones de la actividad.
+
+---
+
 # Estado del proyecto
 
-- Clase 01: Completada
-- Clase 02: Completada
-- Clase 03: Completada
-- Tests Clase 03: **9 passed**
-- Caso de prueba TC-001: Completado
+| Elemento | Estado |
+|---|---|
+| Clase 01 | Completada |
+| Clase 02 | Completada |
+| Clase 03 | Completada |
+| Tests Clase 03 | 9 tests |
+| Caso de prueba TC-001 | Completado |
+| Clase 04 | Completada |
+| Tests Clase 04 | 7 tests |
+| Tests reto Clase 04 | 3 tests |
+| Reflexión Tarea 04 | Completada |
+| README | Actualizado |
+| Repositorio GitHub | Pendiente de actualización final |
+| Entrega Canvas | Pendiente |
+
+---
+
+# Autor
+
+**Cesar Ulises González Cardona**
+
+**Universidad Mariano Gálvez de Guatemala**
+
+**Curso: Aseguramiento de la Calidad del Software**
