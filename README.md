@@ -309,6 +309,94 @@ La pregunta principal de la reflexión es:
 
 En la reflexión se analiza la importancia de la confiabilidad de las pruebas automatizadas, la correcta interacción con los elementos de la aplicación y la importancia de realizar validaciones después de ejecutar las acciones.
 
+## Clase 10: Multi-browser y tags
+
+Pruebas automatizadas de Sauce Demo con Playwright y TypeScript.
+
+### Archivos
+
+- `playwright.config.ts`: configuracion de cinco proyectos.
+- `helpers/auth.ts`: funcion reutilizable de inicio de sesion.
+- `tests/clase10-smoke.spec.ts`: cinco pruebas smoke.
+- `tests/clase10-regression.spec.ts`: cinco pruebas de regresion.
+- `tests/tarea10.spec.ts`: tres retos.
+- `evidencias/clase10/`: capturas de los retos por proyecto.
+
+### Instalacion
+
+```bash
+npm ci
+npx playwright install chromium firefox webkit
+```
+
+### Proyectos
+
+- chromium
+- firefox
+- webkit
+- mobile-chrome
+- mobile-safari
+
+Los proyectos moviles usan emulacion de dispositivos.
+
+### Ejecutar toda la clase
+
+```bash
+npx playwright test tests/clase10-smoke.spec.ts tests/clase10-regression.spec.ts tests/tarea10.spec.ts
+```
+
+Se esperan 65 ejecuciones: 13 tests en cinco proyectos.
+
+### Ejecutar solo los retos en Chromium
+
+```bash
+npx playwright test tests/tarea10.spec.ts --project=chromium
+```
+
+### Reto 1: tags multiples
+
+El test utiliza los tags @regression y @ui.
+
+```bash
+npx playwright test tests/tarea10.spec.ts --grep "@ui"
+```
+
+Para excluirlo y ejecutar los otros retos:
+
+```bash
+npx playwright test tests/tarea10.spec.ts --grep "@regression" --grep-invert "@ui"
+```
+
+### Reto 2: soft assertions
+
+Valida nombre, descripcion, precio, imagen y boton del producto.
+Las aserciones suaves permiten continuar con las validaciones restantes
+aunque una falle. Los fallos conservan el resultado fallido del test.
+
+El resumen de testInfo.errors se adjunta al reporte en formato JSON.
+
+### Reto 3: browserName
+
+Adapta una asercion del userAgent al motor chromium, firefox o webkit.
+Tambien verifica el ordenamiento de precios de mayor a menor.
+No omite motores mediante test.skip().
+
+### Reporte
+
+```bash
+npx playwright show-report
+```
+
+Las capturas, videos y trazas automaticas se generan en test-results.
+El reporte HTML se genera en playwright-report.
+
+Las capturas adicionales de los retos se guardan en:
+evidencias/clase10
+
+### Evidencia del reporte multi-browser
+
+![Reporte HTML multi-browser](evidencias/clase10/reporte-html-multibrowser.png)
+
 ---
 
 # Reporte HTML de Playwright
